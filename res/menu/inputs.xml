@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:id="@+id/action_switch_date_mode"
+        android:title="@string/switch_date_mode"
+        android:icon="@drawable/ic_action_calendar"
+        android:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_saved_pairs"
+        android:icon="@drawable/ic_action_saved"
+        android:title="@string/saved_pairs"
+        android:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_about"
+        android:icon="@drawable/ic_action_info"
+        android:title="@string/about"
+        android:showAsAction="ifRoom" />
+</menu>

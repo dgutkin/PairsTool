@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PairsTool</string>
+    <string name="action_settings">Settings</string>
+    <string name="inputs">Inputs</string>
+    <string name="analysis">Analysis</string>
+    <string name="pair">PAIR</string>
+    <string name="first_ticker">Ticker 1</string>
+    <string name="second_ticker">Ticker 2</string>
+    <string name="start_date">START DATE</string>
+    <string name="start_date2">Start Date</string>
+    <string name="end_date">END DATE</string>
+    <string name="end_date2">End Date</string>
+    <string name="load_pair">Load Pair</string>
+    <string name="save_pair">Save Pair</string>
+    <string name="no_internet_connection">NO INTERNET CONNECTION</string>
+    <string name="data_unavailable">DATA UNAVAILABLE</string>
+    <string name="calculating">Calculating&#8230;</string>
+    <string name="missing_input">MISSING INPUT</string>
+    <string name="invalid_dates">INVALID DATES</string>
+    <string name="maximum_twenty_years">MAXIMUM 20 YEARS</string>
+    <string name="connection_error">CONNECTION ERROR</string>
+    <string name="execution_error">EXECUTION ERROR</string>
+    <string name="date_misalignment">DATE MISALIGNMENT</string>
+    <string name="no_pair_to_save">NO PAIR TO SAVE</string>
+    <string name="pair_saved">PAIR SAVED</string>
+    <string name="limit_reached">LIMIT REACHED</string>
+    <string name="pair_already_saved">PAIR ALREADY SAVED</string>
+    <string name="no_pair_loaded">NO PAIR LOADED</string>
+    <string name="last">LAST</string>
+    <string name="one_day_change">1D CHG</string>
+    <string name="correlation">CORR</string>
+    <string name="five_day_change">5D CHG</string>
+    <string name="flip_pair">Flip Pair</string>
+    <string name="beta_override">Hedge Ratio Override</string>
+    <string name="about">About</string>
+    <string name="refresh">Refresh</string>
+    <string name="saved_pairs">Saved Pairs</string>
+    <string name="load">Load</string>
+    <string name="delete">Delete</string>
+    <string name="enter_hedge_ratio">Enter desired Hedge Ratio:</string>
+    <string name="switch_date_mode">Switch Date Mode</string>
+    <string name="lookback">LOOKBACK</string>
+
+    <string-array name="types">
+        <item>Difference</item>
+        <item>Ratio</item>
+        <item>Residuals</item>
+        <item>Log Residuals</item>
+    </string-array>
+    <string-array name="lookback_periods">
+        <item>1 Month</item>
+        <item>3 Months</item>
+        <item>6 Months</item>
+        <item>1 Year</item>
+        <item>3 Years</item>
+    </string-array>
+
+    <string name="na">NA</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="about_text"><b>Welcome to PairsTool</b> \n
+        \n
+        PairsTool is a comprehensive mobile application for the analysis of stock pairs. 
+		Pairs trading has become a popular investing technique because it allows for speculation
+		on the relative prices of securities, while maintaining a position that has little
+		exposure to general market direction.  As a result, pairs trading is sometimes considered
+		a type of arbitrage because there is little risk to large market movements and profits
+		tend to be small.  The general idea is that two related securities should trade in some relative
+		value to each other, so if one deviates from the other too much in price, then this gap is expected
+		to close moving forward.  The data presented in this application is based on historical 
+		total returns and is for informational purposes only. No investment decision should be made 
+		solely from the information provided in this application. \n
+		\n		<b>Inputs</b> \n
+		The first tab is where the tickers of the two securities in the pair are entered, as well as the
+		lookback period or start date/end date combination to construct the time series used for the analysis.
+		Tap the calendar icon to switch date entry modes.  Tapping \"Load Pair\" runs the analysis using the inputs 
+		and loads the results into the next tab. Tapping \"Save Pair\" saves the pair to memory for later use. 
+		Tap the star icon in the toolbar to see all saved pairs. \n
+		\n
+		<b>Quotes</b>\n
+		The second tab presents the historical performance and the most recent available price of
+		both securities entered.  The historical performance is broken down into the past 20, 5 and
+		1 trading day change in price.  This tab allows for analysis of individual price movements within
+		the pair. Tap the refresh icon to request an updated price quote if one is available.  Note that
+		the quote may be real-time or delayed in certain markets.  Check the date disclaimer at the bottom
+		of the screen for the date and time of the prices used. \n
+		\n		<b>Analysis</b> \n
+		The third tab presents all the results of the pairs analysis.  There are four time series that can
+		be analyzed in this application.  All four series are based on daily closing prices adjusted for splits
+		and dividends.  The first series is the Difference, which is simply the difference in prices
+		between the first security and the second security.  The second series is the Ratio, which is the price
+		of the first security divided by the price of the second security.  The third series is the Residuals,
+		which is the difference between the price of the first security and the hedge ratio multiplied by the 
+		price of the second security.  The hedge ratio is taken as the beta coefficient from an ordinary 
+		least-squares regression of the first security\'s prices onto the second security\'s prices over the time 
+		specified.  The intercept in the regression is zero.  This beta adjustment is made because most pairs do not 
+		move together dollar for dollar.  The fourth series is the Log Residuals, which is the same as the Residuals 
+		but uses the natural log of the prices instead of the prices themselves. The red line is the average of the series. \n
+		\n
+		Each of the time series may be used in a similar way to trade the pairs.  First it must be established that the
+		series is mean reverting.  Then if the series is high, this means that the first security is relatively overpriced
+		and the second security is relatively underpriced.  If the series is low, the first security is relatively
+		underpriced and the second security is relatively overpriced.  It is also important to note that even if the series exhibited
+		mean-reversion in the past, then it does not guarantee that it will do so indefinitely into the future.  It is 
+		possible for the series to exhibit sudden spikes or a fundamental shift in its mean or variation. \n
+		\n
+		The table below the series chart quotes the most recent/last value in the series, the one day return on an equally-weighted
+		pairs position, the five day return on a balanced pairs position and the correlation coefficient of the daily
+		returns in the pair. The bottom chart plots the cumulative returns of both securities in the pairs since the start date.  
+		Both lines start at zero. The application also allows switching the securities so that the first security takes the place 
+		of the second security and vice versa in the calculations without reloading the pair\'s data.</string>
+
+    <string name="hello_world">Hello world!</string>
+
+</resources>
